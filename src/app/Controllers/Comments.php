@@ -16,7 +16,6 @@ class Comments extends BaseController
 
 		if (!$this->validate($rules)) {
 			$data = [
-				'success' => false,
 				'errors' => $this->validator->getErrors()
 			];
 		} else {
@@ -31,11 +30,7 @@ class Comments extends BaseController
 			]);
 
 			$data = [
-				'success' => true,
-				'data' => [
-					'name' => $post['name'],
-					'text' => $post['text'],
-				],
+				'errors' => '',
 			];
 		}
 
